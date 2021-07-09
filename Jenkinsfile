@@ -7,6 +7,7 @@ pipeline{
                 stage('Clone repo') {
                         steps {
                                 script {
+                                        sh "rm -rf chaperootodo_client"
                                         sh "git clone https://gitlab.com/qacdevops/chaperootodo_client"
                                 }
                         }
