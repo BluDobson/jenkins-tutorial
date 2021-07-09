@@ -10,6 +10,7 @@ pipeline{
                                         sh "git clone https://gitlab.com/qacdevops/chaperootodo_client"
                                 }
                         }
+                }
                stage('Install dependencies'){
                         steps {   
                                 script {
@@ -18,11 +19,13 @@ pipeline{
                                         sh "sudo chmod +x /usr/local/bin/docker-compose"
                                 }
                         }
+               }
               stage('Deploy app'){
                         steps { 
                                 script { 
                                         sh "cd chaperootodo_client && sudo docker-compose pull && sudo -E DB_PASSWORD=${DB_PASSWORD} docker-compose up -d"
                                 }
                         }
+              }
         }
 }
