@@ -1,7 +1,7 @@
 pipeline{
         agent any
         environment {
-                DB_PASSWORD = credential("DB_PASSWORD")
+                DB_PASSWORD = "password"
         }
         stages{
                 stage('Clone repo') {
